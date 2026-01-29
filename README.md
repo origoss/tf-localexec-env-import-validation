@@ -5,6 +5,7 @@ This repository contains scripts and Terraform configuration used to validate en
 Apply the terraform configuration. The results are printed during apply.
 ```sh
 cd terraform
+terraform init
 terraform apply
 ```
 ## How It Works
