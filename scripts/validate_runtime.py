@@ -27,6 +27,7 @@ def prove_env_variables():
             print(f"Environment variable '{var}' is not set")
         
 
-if __name__ == "__main__":
+def main():
+    logging.basicConfig(level=logging.DEBUG)
     prove_imports()
     prove_env_variables()
