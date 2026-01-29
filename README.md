@@ -11,5 +11,4 @@ terraform apply
 ## How It Works
 - during apply, a terraform `local-exec` provisioner runs a wrapper script `run_validate_runtime`
 - the wrapper script  sets up the python virtual environment
-- also runs `set_environment_variables`to export  test environment variables
 - and runs the `validate_runtime` to test reachability of environment variables and python module imports
