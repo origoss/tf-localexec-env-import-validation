@@ -3,6 +3,7 @@ import oci
 import requests
 import time
 import sys
+import logging
 
 ENV_VARS = [
     "CONFIG_PROFILE",
@@ -14,9 +15,9 @@ ENV_VARS = [
 
 
 def prove_imports():
-    print("Time is loaded:", 'time' in sys.modules)
-    print("oci version: ", oci.__version__)
-    print("requests version: ", requests.__version__)
+    logging.debug(f"Time is loaded:{'time' in sys.modules}")
+    logging.debug(f"oci version: {oci.__version__}")
+    logging.debug(f"requests version: {requests.__version__}")
 
 def prove_env_variables():
     for var in ENV_VARS:
@@ -27,6 +28,11 @@ def prove_env_variables():
             print(f"Environment variable '{var}' is not set")
         
 
-if __name__ == "__main__":
+def main():
+    logging.basicConfig(level=logging.DEBUG)
     prove_imports()
     prove_env_variables()
+
+
+if __name__ == "__main__":
+    main()
